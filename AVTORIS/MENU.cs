@@ -44,5 +44,12 @@ namespace AVTORIS
             JOB.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form DOGOVOR = new DOGOVOR();
+            DOGOVOR.Show();
+            this.Hide();
+        }
     }
 }

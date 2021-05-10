@@ -148,5 +148,30 @@ namespace AVTORIS
             MENU.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Selected = false;
+
+                for (int j = 0; j < dataGridView1.ColumnCount; j++)
+                    if (dataGridView1.Rows[i].Cells[j].Value != null)
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString().Contains(textBox4.Text))
+                        {
+                            dataGridView1.Rows[i].Selected = true;
+                            dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Purple;
+                            break;
+                        }
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            
+                
+            
+            
+        }
     }
 }
