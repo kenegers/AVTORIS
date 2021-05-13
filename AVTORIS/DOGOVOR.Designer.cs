@@ -30,26 +30,31 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_KL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ladeaDataSet = new AVTORIS.LadeaDataSet();
             this.kLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ladeaDataSet = new AVTORIS.LadeaDataSet();
             this.kLIENTTableAdapter = new AVTORIS.LadeaDataSetTableAdapters.KLIENTTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_KL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kLIENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -65,12 +70,30 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // id_DV
+            // 
+            this.id_DV.HeaderText = "№ договора";
+            this.id_DV.Name = "id_DV";
+            // 
+            // DATE_DV
+            // 
+            this.DATE_DV.HeaderText = "Дата заключения договора";
+            this.DATE_DV.Name = "DATE_DV";
+            this.DATE_DV.Width = 150;
+            // 
+            // id_KL
+            // 
+            this.id_KL.HeaderText = "Фамилия Имя Отчество";
+            this.id_KL.Name = "id_KL";
+            this.id_KL.Width = 200;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(716, 220);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(105, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // comboBox1
             // 
@@ -80,18 +103,18 @@
             this.comboBox1.Location = new System.Drawing.Point(579, 261);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(156, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Id_KL";
-            // 
-            // ladeaDataSet
-            // 
-            this.ladeaDataSet.DataSetName = "LadeaDataSet";
-            this.ladeaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kLIENTBindingSource
             // 
             this.kLIENTBindingSource.DataMember = "KLIENT";
             this.kLIENTBindingSource.DataSource = this.ladeaDataSet;
+            // 
+            // ladeaDataSet
+            // 
+            this.ladeaDataSet.DataSetName = "LadeaDataSet";
+            this.ladeaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // kLIENTTableAdapter
             // 
@@ -135,6 +158,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Меню";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -144,23 +168,6 @@
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "ФИО клиентов";
-            // 
-            // id_DV
-            // 
-            this.id_DV.HeaderText = "№ договора";
-            this.id_DV.Name = "id_DV";
-            // 
-            // DATE_DV
-            // 
-            this.DATE_DV.HeaderText = "Дата заключения договора";
-            this.DATE_DV.Name = "DATE_DV";
-            this.DATE_DV.Width = 150;
-            // 
-            // id_KL
-            // 
-            this.id_KL.HeaderText = "Фамилия Имя Отчество";
-            this.id_KL.Name = "id_KL";
-            this.id_KL.Width = 200;
             // 
             // textBox1
             // 
@@ -198,11 +205,58 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(505, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "Поиск";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(607, 30);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(264, 20);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(804, 301);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Клиенты";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(779, 169);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "АКТ";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // DOGOVOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 450);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -219,8 +273,8 @@
             this.Text = "DOGOVOR";
             this.Load += new System.EventHandler(this.DOGOVOR_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kLIENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +300,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

@@ -18,6 +18,9 @@ namespace AVTORIS
         {
             InitializeComponent();
             LoadData();
+            DataTable dt;
+            SqlDataAdapter adpt;
+
         }
         string connectString = @"Data Source=DESKTOP-50S9T00;Initial Catalog=Ladea;Integrated Security=True";
         private void LoadData()
@@ -25,6 +28,7 @@ namespace AVTORIS
             SqlConnection myConnection = new SqlConnection(connectString);
 
             myConnection.Open();
+
 
             string qure = "SELECT DETALI.id_DT, DETALI.NAME, DETALI.PRICE FROM DETALI";
             SqlCommand command = new SqlCommand(qure, myConnection);
@@ -62,7 +66,7 @@ namespace AVTORIS
             textBox3.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//добав детали
         {
             try
             {
@@ -149,8 +153,58 @@ namespace AVTORIS
             this.Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)// поиск дет
         {
+            //{
+            //    dataGridView1.Rows.Clear();
+            //    SqlConnection myConnection1 = new SqlConnection(connectString);
+            //    myConnection1.Open();
+
+            //    SqlCommand command1 = new SqlCommand($"SELECT DETALI.NAME  FROM  DETALI  WHERE DETALI.NAME = @nam", myConnection1);
+            //    command1.Parameters.AddWithValue("@nam", textBox4.Text.ToString());
+
+            //    dataGridView1.Rows.Clear();
+            //    SqlDataReader reader1 = command1.ExecuteReader();
+            //    List<string[]> data = new List<string[]>();
+            //    while (reader1.Read())
+            //    {
+            //        data.Add(new string[3]);
+            //        data[data.Count - 1][0] = reader1[0].ToString();
+            //        data[data.Count - 1][1] = reader1[1].ToString();
+            //        data[data.Count - 1][2] = reader1[2].ToString();
+
+            //    }
+            //    reader1.Close();
+            //    myConnection1.Close();
+            //    foreach (string[] s in data)
+            //        dataGridView1.Rows.Add(s);
+            //{
+            //    dataGridView1.Rows.Clear();
+            //    SqlConnection myConnection1 = new SqlConnection(connectString);
+            //    myConnection1.Open();
+            //    //string query1 = "SELECT DETALI. FROM DETALI where DETALI.NAME='" + textBox2.Text.ToString() + "'  DETALI.PRICE='" + textBox3.Text.ToString() + "' order by DETALI.id_DETALI";
+            //    //string query1 = "SELECT DETALI.  DETALI.NAME='" + textBox2.Text.Trim() + "' or DETALI.PRICE='" + textBox3.Text.Trim() + "' order by DETALI.id_DETALI";
+            //    //SqlCommand command1 = new SqlCommand(query1, myConnection1);
+            //    SqlDataReader reader1 = command1.ExecuteReader();
+            //    List<string[]> data1 = new List<string[]>();
+            //    while (reader1.Read())
+            //    {
+            //        data1.Add(new string[3]);
+            //        data1[data1.Count - 1][0] = reader1[0].ToString();
+            //        data1[data1.Count - 1][1] = reader1[1].ToString();
+            //        data1[data1.Count - 1][2] = reader1[2].ToString();
+
+            //    }
+            //    reader1.Close();
+            //    myConnection1.Close();
+            //    foreach (string[] s in data1)
+            //        dataGridView1.Rows.Add(s);
+
+
+            //DataTable rezult = new DataTable();
+            //dataGridView1.DataSource = rezult;
+            //(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = String.Format("NAME like '%" + textBox4.Text + "%'");
+
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 dataGridView1.Rows[i].Selected = false;
@@ -166,12 +220,10 @@ namespace AVTORIS
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            
-                
-            
-            
-        }
+
     }
-}
+
+        
+ }
+
+

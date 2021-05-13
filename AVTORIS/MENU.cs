@@ -51,5 +51,20 @@ namespace AVTORIS
             DOGOVOR.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form AKT = new AKT();
+            AKT.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form AKT_DETALI = new AKT_DETALI();
+            AKT_DETALI.Show();
+            this.Hide();
+            
+        }
     }
 }

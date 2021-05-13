@@ -156,5 +156,10 @@ namespace AVTORIS
             MENU.Show();
             this.Hide();
         }
+
+        private void SOTRUD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

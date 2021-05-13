@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_J = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,9 +42,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.id_J = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,9 +54,25 @@
             this.PRICE});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(397, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(394, 331);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // id_J
+            // 
+            this.id_J.HeaderText = "Номер работы";
+            this.id_J.Name = "id_J";
+            // 
+            // NAME
+            // 
+            this.NAME.HeaderText = "Название работы";
+            this.NAME.Name = "NAME";
+            this.NAME.Width = 150;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Цена";
+            this.PRICE.Name = "PRICE";
             // 
             // label3
             // 
@@ -146,22 +162,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // id_J
-            // 
-            this.id_J.HeaderText = "Номер работы";
-            this.id_J.Name = "id_J";
-            // 
-            // NAME
-            // 
-            this.NAME.HeaderText = "Название работы";
-            this.NAME.Name = "NAME";
-            this.NAME.Width = 150;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Цена";
-            this.PRICE.Name = "PRICE";
-            // 
             // JOB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,7 +179,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "JOB";
-            this.Text = "JOB";
+            this.Text = "Работы";
             this.Load += new System.EventHandler(this.JOB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
