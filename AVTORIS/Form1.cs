@@ -16,6 +16,12 @@ namespace AVTORIS
         public Form1()
         {
             InitializeComponent();
+            LoadData();
+        }
+        string connectString = @"Data Source=DESKTOP-50S9T00;Initial Catalog=Ladea;Integrated Security=True";
+        private void LoadData()
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +44,11 @@ namespace AVTORIS
         private void label2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -59,12 +59,11 @@ namespace AVTORIS
             this.Hide();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        
+
+        private void MENU_Load(object sender, EventArgs e)
         {
-            Form AKT_DETALI = new AKT_DETALI();
-            AKT_DETALI.Show();
-            this.Hide();
-            
+
         }
     }
 }

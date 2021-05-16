@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AKT));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_AKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE_AKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,19 @@
             this.sOTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ladeaDataSet3 = new AVTORIS.LadeaDataSet3();
             this.sOTRTableAdapter = new AVTORIS.LadeaDataSet3TableAdapters.SOTRTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Id_AKT_DET = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE_D = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dETALIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ladeaDataSet5 = new AVTORIS.LadeaDataSet5();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dETALITableAdapter = new AVTORIS.LadeaDataSet5TableAdapters.DETALITableAdapter();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet1)).BeginInit();
@@ -74,6 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTRBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dETALIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -85,7 +102,7 @@
             this.id_DV});
             this.dataGridView1.Location = new System.Drawing.Point(2, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(395, 159);
+            this.dataGridView1.Size = new System.Drawing.Size(395, 314);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -107,7 +124,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(103, 309);
+            this.button1.Location = new System.Drawing.Point(332, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -118,7 +135,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 162);
+            this.label3.Location = new System.Drawing.Point(240, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 19;
@@ -127,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 181);
+            this.label2.Location = new System.Drawing.Point(29, 336);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 18;
@@ -135,7 +152,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 181);
+            this.textBox1.Location = new System.Drawing.Point(106, 337);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -145,7 +162,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-1, 219);
+            this.label1.Location = new System.Drawing.Point(9, 374);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 16;
@@ -153,7 +170,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(202, 260);
+            this.button3.Location = new System.Drawing.Point(212, 415);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 23);
             this.button3.TabIndex = 15;
@@ -163,7 +180,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(103, 260);
+            this.button2.Location = new System.Drawing.Point(113, 415);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 23);
             this.button2.TabIndex = 14;
@@ -173,7 +190,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(2, 260);
+            this.button4.Location = new System.Drawing.Point(12, 415);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(95, 23);
             this.button4.TabIndex = 13;
@@ -186,7 +203,7 @@
             this.comboBox1.DataSource = this.dOGOVORBindingSource;
             this.comboBox1.DisplayMember = "Id_DV";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 219);
+            this.comboBox1.Location = new System.Drawing.Point(106, 374);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(156, 21);
             this.comboBox1.TabIndex = 11;
@@ -204,7 +221,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(233, 178);
+            this.dateTimePicker1.Location = new System.Drawing.Point(243, 333);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 12;
@@ -223,7 +240,7 @@
             this.Id_S});
             this.dataGridView2.Location = new System.Drawing.Point(443, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(575, 226);
+            this.dataGridView2.Size = new System.Drawing.Size(575, 159);
             this.dataGridView2.TabIndex = 20;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -251,7 +268,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(459, 260);
+            this.button5.Location = new System.Drawing.Point(443, 176);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 21;
@@ -261,7 +278,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(459, 294);
+            this.button6.Location = new System.Drawing.Point(536, 176);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 22;
@@ -271,7 +288,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(459, 323);
+            this.button7.Location = new System.Drawing.Point(633, 175);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 23;
@@ -281,7 +298,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(778, 258);
+            this.textBox2.Location = new System.Drawing.Point(918, 178);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 24;
@@ -289,16 +306,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(775, 232);
+            this.label4.Location = new System.Drawing.Point(801, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 28;
-            this.label4.Text = "Номер работы";
+            this.label4.Text = "Номер акта";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(584, 238);
+            this.label5.Location = new System.Drawing.Point(440, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 13);
             this.label5.TabIndex = 29;
@@ -307,7 +324,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(584, 285);
+            this.label7.Location = new System.Drawing.Point(796, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 31;
@@ -319,9 +336,9 @@
             this.comboBox2.DataSource = this.jOBBindingSource;
             this.comboBox2.DisplayMember = "NAME";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(587, 257);
+            this.comboBox2.Location = new System.Drawing.Point(570, 209);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(204, 21);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.ValueMember = "Id_J";
             // 
@@ -344,7 +361,7 @@
             this.comboBox3.DataSource = this.sOTRBindingSource;
             this.comboBox3.DisplayMember = "FIO";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(587, 308);
+            this.comboBox3.Location = new System.Drawing.Point(897, 209);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 33;
@@ -364,11 +381,119 @@
             // 
             this.sOTRTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id_AKT_DET,
+            this.Id_DT,
+            this.PRICE_D});
+            this.dataGridView3.Location = new System.Drawing.Point(452, 254);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(566, 150);
+            this.dataGridView3.TabIndex = 34;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // Id_AKT_DET
+            // 
+            this.Id_AKT_DET.HeaderText = "Номер детали";
+            this.Id_AKT_DET.Name = "Id_AKT_DET";
+            // 
+            // Id_DT
+            // 
+            this.Id_DT.HeaderText = "Наименование детали";
+            this.Id_DT.Name = "Id_DT";
+            this.Id_DT.Width = 260;
+            // 
+            // PRICE_D
+            // 
+            this.PRICE_D.HeaderText = "Цена (руб.)";
+            this.PRICE_D.Name = "PRICE_D";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(442, 415);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 35;
+            this.button8.Text = "Добавить";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(536, 415);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 36;
+            this.button9.Text = "Изменить";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(633, 415);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 37;
+            this.button10.Text = "Удалить";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.dETALIBindingSource;
+            this.comboBox4.DisplayMember = "NAME";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(570, 456);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(204, 21);
+            this.comboBox4.TabIndex = 39;
+            this.comboBox4.ValueMember = "Id_DT";
+            // 
+            // dETALIBindingSource
+            // 
+            this.dETALIBindingSource.DataMember = "DETALI";
+            this.dETALIBindingSource.DataSource = this.ladeaDataSet5;
+            // 
+            // ladeaDataSet5
+            // 
+            this.ladeaDataSet5.DataSetName = "LadeaDataSet5";
+            this.ladeaDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(440, 456);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 13);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Наименование детали";
+            // 
+            // dETALITableAdapter
+            // 
+            this.dETALITableAdapter.ClearBeforeFill = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(949, 449);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 38;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
             // AKT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 450);
+            this.ClientSize = new System.Drawing.Size(1046, 514);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label7);
@@ -390,8 +515,10 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AKT";
             this.Text = "AKT";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AKT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).EndInit();
@@ -401,6 +528,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTRBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dETALIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladeaDataSet5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +575,18 @@
         private LadeaDataSet3 ladeaDataSet3;
         private System.Windows.Forms.BindingSource sOTRBindingSource;
         private LadeaDataSet3TableAdapters.SOTRTableAdapter sOTRTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_AKT_DET;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_DT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE_D;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label6;
+        private LadeaDataSet5 ladeaDataSet5;
+        private System.Windows.Forms.BindingSource dETALIBindingSource;
+        private LadeaDataSet5TableAdapters.DETALITableAdapter dETALITableAdapter;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

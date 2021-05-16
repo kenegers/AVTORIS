@@ -75,12 +75,6 @@
     <Compile Include="AKT.Designer.cs">
       <DependentUpon>AKT.cs</DependentUpon>
     </Compile>
-    <Compile Include="AKT_DETALI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AKT_DETALI.Designer.cs">
-      <DependentUpon>AKT_DETALI.cs</DependentUpon>
-    </Compile>
     <Compile Include="DETALI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LadeaDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LadeaDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LadeaDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MENU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +151,6 @@
     </Compile>
     <EmbeddedResource Include="AKT.resx">
       <DependentUpon>AKT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AKT_DETALI.resx">
-      <DependentUpon>AKT_DETALI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DETALI.resx">
       <DependentUpon>DETALI.cs</DependentUpon>
@@ -240,6 +236,17 @@
     </None>
     <None Include="LadeaDataSet4.xss">
       <DependentUpon>LadeaDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="LadeaDataSet5.xsc">
+      <DependentUpon>LadeaDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="LadeaDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LadeaDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LadeaDataSet5.xss">
+      <DependentUpon>LadeaDataSet5.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

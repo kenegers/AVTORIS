@@ -19,6 +19,8 @@ namespace AVTORIS
             InitializeComponent();
             LoadData();
             LoadDataJ();
+            LoadDataD();
+
         }
         string connectString = @"Data Source=DESKTOP-50S9T00;Initial Catalog=Ladea;Integrated Security=True";
 
@@ -29,9 +31,10 @@ namespace AVTORIS
             myConnection.Open();
 
             
-            SqlCommand command = new SqlCommand($"SELECT AKT_JOB.Id_AKT_JOB, JOB.NAME, JOB.PRICE, SOTR.FIO FROM (AKT_JOB inner Join JOB on AKT_JOB.Id_J = JOB.Id_J ) " +
+            SqlCommand command = new SqlCommand($"SELECT AKT_JOB.Id_AKT_JOB, JOB.NAME, JOB.PRICE, SOTR.FIO" +
+                $" FROM (AKT_JOB inner Join JOB on AKT_JOB.Id_J = JOB.Id_J ) " +
                 $"inner Join SOTR on  AKT_JOB.Id_S = SOTR.id_S where [Id_AKT]='{textBox1.Text.ToString()}'", myConnection);
-
+            
 
             SqlDataReader reader = command.ExecuteReader();
             List<string[]> data = new List<string[]>();
@@ -82,8 +85,41 @@ namespace AVTORIS
         
         }
 
+
+
+        private void LoadDataD()
+        {
+            SqlConnection myConnection = new SqlConnection(connectString);
+
+            myConnection.Open();
+            
+            SqlCommand command = new SqlCommand($"SELECT AKT_DETALI.Id_AKT_DET, DETALI.NAME,  DETALI.PRICE_D " +
+                $"FROM (AKT_DETALI inner Join DETALI on AKT_DETALI.Id_DT = DETALI.Id_DT )  where [Id_AKT]='{textBox1.Text.ToString()}'", myConnection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+            while (reader.Read())
+            {
+                data.Add(new string[3]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+
+            }
+            reader.Close();
+
+            foreach (string[] s in data)
+                dataGridView3.Rows.Add(s);
+            dataGridView3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+
         private void AKT_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "ladeaDataSet5.DETALI". При необходимости она может быть перемещена или удалена.
+            this.dETALITableAdapter.Fill(this.ladeaDataSet5.DETALI);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ladeaDataSet3.SOTR". При необходимости она может быть перемещена или удалена.
             this.sOTRTableAdapter.Fill(this.ladeaDataSet3.SOTR);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "ladeaDataSet2.JOB". При необходимости она может быть перемещена или удалена.
@@ -132,6 +168,29 @@ namespace AVTORIS
             dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            //
+            dataGridView3.Rows.Clear();///чистим третий датагрид , что бы после записывали значения дт1
+
+            SqlCommand commi = new SqlCommand($"SELECT AKT_DETALI.Id_AKT_DET, DETALI.NAME,  DETALI.PRICE_D FROM (AKT_DETALI inner Join DETALI on AKT_DETALI.Id_DT = DETALI.Id_DT ) " +
+                 $" where [Id_AKT]='{textBox1.Text.ToString()}'", myConnection);
+
+            SqlDataReader reader1 = commi.ExecuteReader();
+            List<string[]> data1 = new List<string[]>();
+            while (reader1.Read())
+            {
+                data1.Add(new string[3]);
+
+                data1[data1.Count - 1][0] = reader1[0].ToString();
+                data1[data1.Count - 1][1] = reader1[1].ToString();
+                data1[data1.Count - 1][2] = reader1[2].ToString();
+            
+            }
+            reader1.Close();
+
+            foreach (string[] s in data1)
+                dataGridView3.Rows.Add(s);
+            dataGridView3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void button4_Click(object sender, EventArgs e)//добавть акт 
@@ -223,7 +282,7 @@ namespace AVTORIS
             myConnection.Close();
         }
 
-        private void button5_Click(object sender, EventArgs e)//добавить в акт работ
+        private void button5_Click(object sender, EventArgs e)//добавить в акт работу
         {
             try
             {
@@ -245,8 +304,7 @@ namespace AVTORIS
                     dataGridView2.Rows.Clear();
                     LoadDataJ();
                     myConnection.Close();
-                    //textBox1.Clear();
-                    
+                                       
                     
                 }
             }
@@ -256,9 +314,9 @@ namespace AVTORIS
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)//изменить акт работ
         {
-            SqlConnection myConnection = new SqlConnection(connectString);//изменить акт работ 
+            SqlConnection myConnection = new SqlConnection(connectString); 
             myConnection.Open();
             textBox2.Text = dataGridView2.CurrentRow.Cells[0].Value.ToString();
             string upd = $"UPDATE[dbo].[AKT_JOB] set [Id_J] =(SELECT JOB.id_J FROM JOB WHERE JOB.NAME = '{comboBox2.Text}'), " +
@@ -275,8 +333,7 @@ namespace AVTORIS
             LoadDataJ();
             textBox1.Clear();
             textBox2.Clear();
-            textBox3.Clear();
-            
+                        
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)//ПРи заполнение акта, выбрать из таблицы джоб
@@ -311,6 +368,104 @@ namespace AVTORIS
             reader.Close();
             myConnection.Close();
             textBox1.Clear();
+        }
+
+        private void button8_Click(object sender, EventArgs e)//добавить в датагрид 3 
+        {
+            try
+            {
+                string connectString = @"Data Source=DESKTOP-50S9T00;Initial Catalog=Ladea;Integrated Security=True";
+                SqlConnection myConnection = new SqlConnection(connectString);
+                myConnection.Open();
+                if (myConnection.State == ConnectionState.Open)
+                {
+                   SqlCommand DET_AKT = new SqlCommand($"INSERT INTO [dbo].[AKT_DETALI] values (@Id_AKT,(SELECT DETALI.id_DT FROM DETALI" +
+                        $" WHERE DETALI.NAME = @Id_DT))", myConnection);
+
+                    DET_AKT.Parameters.AddWithValue("@Id_AKT", textBox1.Text.ToString()); //dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    DET_AKT.Parameters.AddWithValue("@Id_DT", comboBox4.Text);
+
+
+
+                    DET_AKT.ExecuteNonQuery();
+                    MessageBox.Show("Добавлен!");
+                    dataGridView3.Rows.Clear();
+                    LoadDataD();
+                    myConnection.Close();
+              
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте заполнение!");
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SqlConnection myConnection = new SqlConnection(connectString);
+            myConnection.Open();
+            textBox3.Text = dataGridView3.CurrentRow.Cells[0].Value.ToString();
+
+            //comboBox4.Text = dataGridView3.CurrentRow.Cells[1].Value.ToString();
+            
+            myConnection.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)  //  изменение деталей в акте
+        {
+            SqlConnection myConnection = new SqlConnection(connectString);
+            myConnection.Open();
+            textBox3.Text = dataGridView3.CurrentRow.Cells[0].Value.ToString();
+
+
+            SqlCommand aa = new SqlCommand($"UPDATE[dbo].[AKT_DETALI] set [Id_DT] =(SELECT DETALI.Id_DT FROM DETALI " +
+                $"WHERE DETALI.NAME = '{comboBox4.Text}') WHERE ([Id_AKT] = '{textBox1.Text.ToString()}') and " +
+                $"([Id_AKT_DET] = '{ dataGridView3.CurrentRow.Cells[0].Value.ToString()}')", myConnection);
+
+
+            aa.ExecuteNonQuery();
+            MessageBox.Show("Изменения внесены!");
+            myConnection.Close();
+            myConnection.Dispose();
+            this.dataGridView3.Rows.Clear();//удаление всей строчек
+            LoadDataD();
+            textBox3.Clear();
+            
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SqlConnection myConnection = new SqlConnection(connectString);
+            myConnection.Open();
+            string del = "DELETE FROM dbo.AKT_DETALI WHERE Id_AKT_DET =" +  dataGridView3.CurrentRow.Cells[0].Value.ToString();
+
+            SqlCommand com = new SqlCommand(del, myConnection);
+            SqlDataReader reader = com.ExecuteReader();
+            List<string[]> data = new List<string[]>();
+            while (reader.Read())
+            {
+                data.Add(new string[3]);
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                
+
+            }
+            reader.Close();
+            dataGridView3.Rows.Clear();
+            LoadDataD();
+
+            MessageBox.Show("Данные Удалены!");
+
+            reader.Close();
+            myConnection.Close();
+            textBox3.Clear();
         }
     }
 }

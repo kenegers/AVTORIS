@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DETALI));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,9 +81,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(578, 252);
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(542, 242);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(136, 46);
             this.button4.TabIndex = 20;
             this.button4.Text = "Меню";
             this.button4.UseVisualStyleBackColor = true;
@@ -90,9 +93,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(677, 178);
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(666, 178);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(98, 46);
             this.button3.TabIndex = 19;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,9 +105,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(578, 178);
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(553, 178);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 46);
             this.button2.TabIndex = 18;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
@@ -110,14 +117,16 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(578, 120);
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox3.Location = new System.Drawing.Point(598, 126);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 17;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(578, 88);
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox2.Location = new System.Drawing.Point(598, 91);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 16;
@@ -125,33 +134,38 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(465, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(52, 23);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Цена";
+            this.label3.Text = "Цена:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(465, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 14;
             this.label2.Text = "Название детали";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(578, 58);
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox1.Location = new System.Drawing.Point(598, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 13;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(468, 178);
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(446, 178);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(97, 46);
             this.button1.TabIndex = 12;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
@@ -160,17 +174,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(465, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 11;
             this.label1.Text = "№ детали";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(503, 10);
+            this.button5.Location = new System.Drawing.Point(477, -1);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(115, 45);
             this.button5.TabIndex = 21;
             this.button5.Text = "Поиск";
             this.button5.UseVisualStyleBackColor = true;
@@ -178,7 +193,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(598, 12);
+            this.textBox4.Location = new System.Drawing.Point(610, 12);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 22;
@@ -201,8 +216,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DETALI";
             this.Text = "Детали";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DETALI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

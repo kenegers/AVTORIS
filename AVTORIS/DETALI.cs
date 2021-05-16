@@ -30,7 +30,7 @@ namespace AVTORIS
             myConnection.Open();
 
 
-            string qure = "SELECT DETALI.id_DT, DETALI.NAME, DETALI.PRICE FROM DETALI";
+            string qure = "SELECT DETALI.id_DT, DETALI.NAME, DETALI.PRICE_D FROM DETALI";
             SqlCommand command = new SqlCommand(qure, myConnection);
             SqlDataReader reader = command.ExecuteReader();
             List<string[]> data = new List<string[]>();
@@ -74,10 +74,10 @@ namespace AVTORIS
                 myConnection.Open();
                 if (myConnection.State == ConnectionState.Open)
                 {
-                    SqlCommand DETALI = new SqlCommand($"INSERT INTO [dbo].[DETALI] values (@NAME, @PRICE)", myConnection);
+                    SqlCommand DETALI = new SqlCommand($"INSERT INTO [dbo].[DETALI] values (@NAME, @PRICE_D)", myConnection);
 
                     DETALI.Parameters.AddWithValue("@NAME", textBox2.Text);
-                    DETALI.Parameters.AddWithValue("@PRICE", textBox3.Text);
+                    DETALI.Parameters.AddWithValue("@PRICE_D", textBox3.Text);
 
 
                     DETALI.ExecuteNonQuery();
@@ -101,7 +101,7 @@ namespace AVTORIS
             SqlConnection myConnection = new SqlConnection(connectString);
             myConnection.Open();
 
-            string upd = $"UPDATE[dbo].[DETALI] set [NAME] = '{textBox2.Text.ToString()}'," + $"[PRICE] = '{textBox3.Text.ToString()}' WHERE Id_DT = " + textBox1.Text;
+            string upd = $"UPDATE[dbo].[DETALI] set [NAME] = '{textBox2.Text.ToString()}'," + $"[PRICE_D] = '{textBox3.Text.ToString()}' WHERE Id_DT = " + textBox1.Text;
 
             SqlCommand a = new SqlCommand(upd, myConnection);
             a.ExecuteNonQuery();
