@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,11 +199,24 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 22;
             // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.button6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(542, 322);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 62);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "Список деталей";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // DETALI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -245,5 +259,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button6;
     }
 }

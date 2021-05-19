@@ -465,7 +465,12 @@ namespace AVTORIS
 
             reader.Close();
             myConnection.Close();
-            textBox3.Clear();
+            //textBox3.Clear();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

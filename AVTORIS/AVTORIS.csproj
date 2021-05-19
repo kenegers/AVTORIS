@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -87,11 +90,11 @@
     <Compile Include="DOGOVOR.Designer.cs">
       <DependentUpon>DOGOVOR.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="AVTORIS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AVTORIS.Designer.cs">
+      <DependentUpon>AVTORIS.cs</DependentUpon>
     </Compile>
     <Compile Include="JOB.cs">
       <SubType>Form</SubType>
@@ -158,8 +161,8 @@
     <EmbeddedResource Include="DOGOVOR.resx">
       <DependentUpon>DOGOVOR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="AVTORIS.resx">
+      <DependentUpon>AVTORIS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JOB.resx">
       <DependentUpon>JOB.cs</DependentUpon>

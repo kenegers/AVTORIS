@@ -44,9 +44,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dOGOVORBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ladeaDataSet1 = new AVTORIS.LadeaDataSet1();
+            this.ladeaDataSet1 = new global::AVTORIS.LadeaDataSet1();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dOGOVORTableAdapter = new AVTORIS.LadeaDataSet1TableAdapters.DOGOVORTableAdapter();
+            this.dOGOVORTableAdapter = new global::AVTORIS.LadeaDataSet1TableAdapters.DOGOVORTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Id_AKT_JOB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_J = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,12 +61,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.jOBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ladeaDataSet2 = new AVTORIS.LadeaDataSet2();
-            this.jOBTableAdapter = new AVTORIS.LadeaDataSet2TableAdapters.JOBTableAdapter();
+            this.ladeaDataSet2 = new global::AVTORIS.LadeaDataSet2();
+            this.jOBTableAdapter = new global::AVTORIS.LadeaDataSet2TableAdapters.JOBTableAdapter();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.sOTRBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ladeaDataSet3 = new AVTORIS.LadeaDataSet3();
-            this.sOTRTableAdapter = new AVTORIS.LadeaDataSet3TableAdapters.SOTRTableAdapter();
+            this.ladeaDataSet3 = new global::AVTORIS.LadeaDataSet3();
+            this.sOTRTableAdapter = new global::AVTORIS.LadeaDataSet3TableAdapters.SOTRTableAdapter();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Id_AKT_DET = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,9 +76,9 @@
             this.button10 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dETALIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ladeaDataSet5 = new AVTORIS.LadeaDataSet5();
+            this.ladeaDataSet5 = new global::AVTORIS.LadeaDataSet5();
             this.label6 = new System.Windows.Forms.Label();
-            this.dETALITableAdapter = new AVTORIS.LadeaDataSet5TableAdapters.DETALITableAdapter();
+            this.dETALITableAdapter = new global::AVTORIS.LadeaDataSet5TableAdapters.DETALITableAdapter();
             this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dOGOVORBindingSource)).BeginInit();
@@ -124,9 +124,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(332, 415);
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(322, 370);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(109, 34);
             this.button1.TabIndex = 1;
             this.button1.Text = "Договор";
             this.button1.UseVisualStyleBackColor = true;
@@ -170,9 +171,10 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(212, 415);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 23);
+            this.button3.Size = new System.Drawing.Size(92, 33);
             this.button3.TabIndex = 15;
             this.button3.Text = "Удалить АКТ";
             this.button3.UseVisualStyleBackColor = true;
@@ -180,9 +182,10 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.Location = new System.Drawing.Point(113, 415);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 23);
+            this.button2.Size = new System.Drawing.Size(93, 33);
             this.button2.TabIndex = 14;
             this.button2.Text = "Изменить АКТ";
             this.button2.UseVisualStyleBackColor = true;
@@ -190,9 +193,10 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.Location = new System.Drawing.Point(12, 415);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 23);
+            this.button4.Size = new System.Drawing.Size(95, 33);
             this.button4.TabIndex = 13;
             this.button4.Text = "Добавить АКТ";
             this.button4.UseVisualStyleBackColor = true;
@@ -200,12 +204,14 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.DataSource = this.dOGOVORBindingSource;
             this.comboBox1.DisplayMember = "Id_DV";
+            this.comboBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(106, 374);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(156, 21);
+            this.comboBox1.Size = new System.Drawing.Size(156, 31);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.ValueMember = "Id_DV";
             // 
@@ -268,9 +274,11 @@
             // 
             // button5
             // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.Location = new System.Drawing.Point(443, 176);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(92, 27);
             this.button5.TabIndex = 21;
             this.button5.Text = "Добавить";
             this.button5.UseVisualStyleBackColor = true;
@@ -278,9 +286,11 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(536, 176);
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(541, 176);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(110, 27);
             this.button6.TabIndex = 22;
             this.button6.Text = "Изменить";
             this.button6.UseVisualStyleBackColor = true;
@@ -288,9 +298,11 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(633, 175);
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(657, 175);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(100, 28);
             this.button7.TabIndex = 23;
             this.button7.Text = "Удалить";
             this.button7.UseVisualStyleBackColor = true;
@@ -306,39 +318,44 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(801, 181);
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(815, 174);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 28;
             this.label4.Text = "Номер акта";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(440, 212);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 13);
+            this.label5.Size = new System.Drawing.Size(180, 23);
             this.label5.TabIndex = 29;
             this.label5.Text = "Наименование Работы";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(796, 212);
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(831, 212);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.Size = new System.Drawing.Size(137, 23);
             this.label7.TabIndex = 31;
             this.label7.Text = "ФИО сотрудника";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.jOBBindingSource;
             this.comboBox2.DisplayMember = "NAME";
+            this.comboBox2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(570, 209);
+            this.comboBox2.Location = new System.Drawing.Point(621, 212);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(204, 21);
+            this.comboBox2.Size = new System.Drawing.Size(204, 31);
             this.comboBox2.TabIndex = 32;
             this.comboBox2.ValueMember = "Id_J";
             // 
@@ -358,12 +375,14 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox3.DataSource = this.sOTRBindingSource;
             this.comboBox3.DisplayMember = "FIO";
+            this.comboBox3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(897, 209);
+            this.comboBox3.Location = new System.Drawing.Point(974, 212);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(195, 23);
             this.comboBox3.TabIndex = 33;
             this.comboBox3.ValueMember = "Id_S";
             // 
@@ -412,9 +431,11 @@
             // 
             // button8
             // 
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button8.Location = new System.Drawing.Point(442, 415);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(104, 33);
             this.button8.TabIndex = 35;
             this.button8.Text = "Добавить";
             this.button8.UseVisualStyleBackColor = true;
@@ -422,9 +443,11 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(536, 415);
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.Location = new System.Drawing.Point(552, 415);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(99, 33);
             this.button9.TabIndex = 36;
             this.button9.Text = "Изменить";
             this.button9.UseVisualStyleBackColor = true;
@@ -432,9 +455,11 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(633, 415);
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(657, 415);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.Size = new System.Drawing.Size(107, 33);
             this.button10.TabIndex = 37;
             this.button10.Text = "Удалить";
             this.button10.UseVisualStyleBackColor = true;
@@ -442,12 +467,14 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox4.DataSource = this.dETALIBindingSource;
             this.comboBox4.DisplayMember = "NAME";
+            this.comboBox4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(570, 456);
+            this.comboBox4.Location = new System.Drawing.Point(625, 453);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(204, 21);
+            this.comboBox4.Size = new System.Drawing.Size(204, 31);
             this.comboBox4.TabIndex = 39;
             this.comboBox4.ValueMember = "Id_DT";
             // 
@@ -464,9 +491,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(440, 456);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 13);
+            this.label6.Size = new System.Drawing.Size(179, 23);
             this.label6.TabIndex = 40;
             this.label6.Text = "Наименование детали";
             // 
@@ -476,7 +504,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(949, 449);
+            this.textBox3.Location = new System.Drawing.Point(953, 428);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 38;
@@ -486,7 +514,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 514);
+            this.ClientSize = new System.Drawing.Size(1181, 514);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.textBox3);

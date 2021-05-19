@@ -305,5 +305,24 @@ namespace AVTORIS
             }
             return dt;
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Form MENU = new MENU();
+            MENU.Show();
+            this.Hide();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            Form SOTRUD = new SOTRUD();
+            SOTRUD.Show();
+            this.Hide();
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

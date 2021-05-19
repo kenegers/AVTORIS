@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace AVTORIS
 {
@@ -160,6 +161,152 @@ namespace AVTORIS
         private void SOTRUD_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //Microsoft.Office.Interop.Excel.Application xlApp;
+            Excel.Application xlApp = new Excel.Application();
+            Microsoft.Office.Interop.Excel.Worksheet xlSheet;
+            Microsoft.Office.Interop.Excel.Range xlSheetRange;
+            Microsoft.Office.Interop.Excel.Range xlSheetRan;
+            Microsoft.Office.Interop.Excel.Range worksheet_tb;
+            Excel.Workbook workbook = xlApp.Workbooks.Open(@"C:\Users\ken\Desktop\авториз2\Список сотрудников.xlsx");//добавляем работы
+            try
+            {
+                //делаем временно неактивным документ
+                xlApp.Interactive = false;
+                xlApp.EnableEvents = false;
+
+                //выбираем лист на котором будем работать (Лист 1)
+                Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets.get_Item(1);
+                xlSheet = (Excel.Worksheet)xlApp.Sheets[1];
+                //Название листа
+                xlSheet.Name = "Список сотрудников";
+
+                //Выгрузка данных
+                DataTable dt = GetData();
+                // Заполняем дату
+                Excel.Range dataCells = worksheet.get_Range("A1", "B1").Cells;  // Выделяем диапазон ячеек
+                dataCells.Merge(Type.Missing);                                  // Производим объединение         
+                dataCells.Value2 = "Дата создания : " + DateTime.Now.ToString("dd MMMM yyyy") + " г."; // Заполняем сегодняшней датой
+                dataCells.Cells.Font.Name = "Tahoma";
+                xlApp.StandardFontSize = 12;
+
+                //выделяем строку заголовка
+                dataCells = worksheet.get_Range("B2", "C2").Cells;  // Выделяем диапазон ячеек
+                dataCells.Merge(Type.Missing);  // Производим объединение 
+                worksheet.Cells[2, 2] = "Список сотрудников";
+
+                //делаем полужирный текст и перенос слов
+                xlSheetRan = xlSheet.get_Range("B2:C2:D2:E2:F2", Type.Missing);
+                xlSheetRan.WrapText = true;
+                xlSheetRan.Font.Bold = true;
+                xlSheetRan.Cells.Font.Name = "Tahoma";
+
+                //выделяем строку шапки таблицы
+                xlSheetRange = xlSheet.get_Range("A4:F4", Type.Missing);
+                //делаем полужирный текст и перенос слов
+                xlSheetRange.WrapText = true;
+                xlSheetRange.Font.Bold = true;
+                xlSheetRange.Cells.Font.Name = "Times New Roman";
+
+                // Вписываем заголовки столбцов
+                worksheet.Cells[4, 1] = "Номер сотрудника";
+                worksheet.Cells[4, 2] = "Фамилия Имя Отчество";
+                worksheet.Cells[4, 3] = "Должность";
+                worksheet.Cells[4, 4] = "Логин";
+                worksheet.Cells[4, 5] = "Пароль";
+
+                int collInd = 0;
+                int rowInd = 0;
+                string data = "";
+                //заполняем строки
+                for (rowInd = 0; rowInd < dt.Rows.Count; rowInd++)
+                {
+                    for (collInd = 0; collInd < dt.Columns.Count; collInd++)
+                    {
+                        data = dt.Rows[rowInd].ItemArray[collInd].ToString();
+                        xlSheet.Cells[rowInd + 5, collInd + 1] = data;
+                    }
+                }
+                string i = Convert.ToString(rowInd + 4);
+                //MessageBox.Show(i.ToString());
+
+                //выбираем всю область данных
+                xlSheetRange = xlSheet.UsedRange;
+                // Количетсво строк до подписи
+                int rowsCount = dataGridView1.Rows.Count + 6;
+                // Подпись
+                worksheet.Cells[rowsCount, 2] = "Подпись администратора: ";
+                //рисуем рамочку
+                worksheet_tb = worksheet.get_Range("A4", "E" + i);
+                worksheet_tb.Borders.Color = System.Drawing.Color.Black.ToArgb();
+                //Шрифт для диапазона
+                worksheet_tb.Cells.Font.Name = "Times New Roman";
+                //выравниваем строки и колонки по их содержимому
+                xlSheetRange.Columns.AutoFit();
+                xlSheetRange.Rows.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                //Показываем ексель
+                xlApp.Visible = true;
+
+                xlApp.Interactive = true;
+                xlApp.ScreenUpdating = true;
+                xlApp.UserControl = true;
+
+                //Отсоединяемся от Excel
+                releaseObject(xlApp);
+            }
+        }
+        //Освобождаем ресурсы и отсоединяемся от ексель:
+        void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show(ex.ToString(), "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+        private DataTable GetData()// методом, который будет выгружать данные из SQL в DataTable
+        {
+            SqlConnection con = new SqlConnection(connectString);
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = @"SELECT SOTR.id_S, SOTR.FIO, SOTR.DOLG,SOTR.LOGI,SOTR.PAR FROM SOTR";
+                SqlCommand comm = new SqlCommand(query, con);
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                dt = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+                con.Dispose();
+            }
+            return dt;
         }
     }
 }

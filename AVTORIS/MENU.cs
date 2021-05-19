@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,15 @@ using System.Windows.Forms;
 
 namespace AVTORIS
 {
-    public partial class MENU : Form
+    public partial class MENU : MaterialForm
     {
         public MENU()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue400, Primary.Blue400, Primary.Blue400, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void button2_Click(object sender, EventArgs e)
