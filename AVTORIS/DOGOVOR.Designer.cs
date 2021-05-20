@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DOGOVOR));
             this.kLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ladeaDataSet = new global::AVTORIS.LadeaDataSet();
-            this.kLIENTTableAdapter = new global::AVTORIS.LadeaDataSetTableAdapters.KLIENTTableAdapter();
+            this.ladeaDataSet = new AVTORIS.LadeaDataSet();
+            this.kLIENTTableAdapter = new AVTORIS.LadeaDataSetTableAdapters.KLIENTTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -115,6 +115,7 @@
             this.button8.TabIndex = 32;
             this.button8.Text = "АКТ";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // button7
             // 
@@ -157,6 +158,7 @@
             this.button5.TabIndex = 28;
             this.button5.Text = "Печать договора";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // label3
             // 

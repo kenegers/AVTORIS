@@ -78,6 +78,12 @@
     <Compile Include="AKT.Designer.cs">
       <DependentUpon>AKT.cs</DependentUpon>
     </Compile>
+    <Compile Include="AVTORIS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AVTORIS.Designer.cs">
+      <DependentUpon>AVTORIS.cs</DependentUpon>
+    </Compile>
     <Compile Include="DETALI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,12 +95,6 @@
     </Compile>
     <Compile Include="DOGOVOR.Designer.cs">
       <DependentUpon>DOGOVOR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AVTORIS.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AVTORIS.Designer.cs">
-      <DependentUpon>AVTORIS.cs</DependentUpon>
     </Compile>
     <Compile Include="JOB.cs">
       <SubType>Form</SubType>
@@ -155,14 +155,14 @@
     <EmbeddedResource Include="AKT.resx">
       <DependentUpon>AKT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AVTORIS.resx">
+      <DependentUpon>AVTORIS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DETALI.resx">
       <DependentUpon>DETALI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DOGOVOR.resx">
       <DependentUpon>DOGOVOR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AVTORIS.resx">
-      <DependentUpon>AVTORIS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JOB.resx">
       <DependentUpon>JOB.cs</DependentUpon>

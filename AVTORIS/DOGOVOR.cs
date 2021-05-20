@@ -324,5 +324,17 @@ namespace AVTORIS
         {
 
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            Form AKT = new AKT();
+            AKT.Show();
+            this.Hide();
+        }
     }
 }
